@@ -1,2 +1,6 @@
 
-<li>{{todo.desc}}</li>
+<li *ngIf="todo" [ngClass]="todo?.done ? 'done' : 'not-done'">
+  {{todo?.desc}}
+  <button (click)="toggleDone()">{{todo?.done ? 'Undo Thing' : 'Do Thing'}}</button>
+  <button (click)="delete()">Remove</button>
+</li>
