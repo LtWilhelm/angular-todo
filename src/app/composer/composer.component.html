@@ -1,4 +1,6 @@
 <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
-  <textarea formControlName="desc" cols="30" rows="10"></textarea>
-  <button type="submit">Add Todo</button>
+  <div class="form">
+    <div><textarea formControlName="desc" cols="30" rows="10" placeholder="Add todo..."></textarea></div>
+    <div><button type="submit">Add Todo</button></div>
+  </div>
 </form>

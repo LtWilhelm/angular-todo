@@ -1,3 +1,8 @@
 <ul>
-  <app-todo-list-item *ngFor="let todo of todos" [todo]="todo"></app-todo-list-item>
+  <!-- <app-todo-list-item *ngFor="let todo of todos" [todo]="todo"></app-todo-list-item> -->
+  <li *ngFor="let todo of todos" [ngClass]="todo.done ? 'done' : 'not-done'" class="todo-item">
+    {{todo.desc}}
+    <button (click)="toggleDone(todo)">{{todo.done ? 'Undo Thing' : 'Do Thing'}}</button>
+    <button (click)="delete(todo)">Remove</button>
+  </li>
 </ul>

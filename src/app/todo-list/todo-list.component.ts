@@ -11,7 +11,7 @@ export class TodoListComponent implements OnInit {
   todos: ITodo[] = [];
   constructor(
     private todosService: TodosService
-  ) { 
+  ) {
     this.todos = this.todosService.todos;
   }
 
@@ -20,4 +20,14 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleDone = (todo: ITodo) => {
+    this.todosService.updateTodo({
+      ...todo,
+      done: !todo.done
+    })
+  }
+
+  delete = (todo: ITodo) => {
+    this.todosService.removeTodo(todo);
+  }
 }

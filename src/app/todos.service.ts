@@ -14,6 +14,8 @@ export class TodosService {
     this.setTodos();
   }
 
+  getTodos = () => this.todos;
+
   addTodo = (todo: ITodo) => {
     this.todos.push(todo);
     this.setTodos();
